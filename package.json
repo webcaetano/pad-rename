@@ -12,7 +12,8 @@
     "test": "ava"
   },
   "dependencies": {
-    "globby": "^6.0.0",
+    "async": "^2.1.2",
+    "glob": "^7.1.1",
     "lodash": "^4.13.1",
     "meow": "^3.7.0"
   },

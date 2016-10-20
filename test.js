@@ -1,27 +1,38 @@
 var _ = require('lodash');
 var del = require('del');
-var globby = require('globby');
+var glob = require('glob');
 var path = require('path');
 var fs = require('fs');
 var test = require('ava');
 var tempfile = require('tempfile');
 
-// var self = require('./');
+var self = require('./');
 
-test('should output 3 files', async function(t){
+test('should output renamed pad files', async function(t){
 	var tmpFolder = tempfile();
 	fs.mkdirSync(tmpFolder);
-	fs.mkdirSync(path.join(tmpFolder,'/src'));
-	// fs.mkdirSync(path.join(tmpFolder,'/output'));
 
-	_.times(30,function(i){
-		fs.writeFileSync(path.join(tmpFolder,'/src/'+_.padStart(i,2,'0')+'.png'),'lulu')
-	});
+	_.each([
+		'atk',
+		'run',
+		'die',
+	],function(val){
+		fs.mkdirSync(path.join(tmpFolder,'/'+val));
+		_.times(5,function(i){
+			fs.writeFileSync(path.join(tmpFolder,'/'+val+'/Lulu'+_.capitalize(val)+'1_N_'+_.padStart(i+1000,5,'0')+'.png'),'Yup, that tasted purple');
+		});
+	})
 
+	self(path.join(tmpFolder,'/**'),function(err,data){
+		t.is(err,null);
+		t.pass();
+		// del.sync(tmpFolder,{
+		// 	force:true
+		// });
+	})
 	// await self(path.join(tmpFolder,'/src/*.png'),path.join(tmpFolder,'/output'),3);
-	t.is(globby.sync(path.join(tmpFolder,'/src/*')).length,30);
-	t.pass();
-	// del.sync('./test/output/*');
+	// t.is(globby.sync(path.join(tmpFolder,'/src/*')).length,30);
+
 });
 
 
