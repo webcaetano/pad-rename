@@ -1,0 +1,1 @@
+@webcaetano Node module boilerplate

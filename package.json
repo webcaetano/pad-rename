@@ -1,0 +1,42 @@
+{
+  "name": "pad-rename",
+  "version": "0.0.0",
+  "description": "Rename files with pads splited on folders",
+  "main": "index.js",
+  "author": "Andre Caetano",
+  "license": "MIT",
+  "bin": {
+    "rpad": "cli.js"
+  },
+  "scripts": {
+    "test": "ava"
+  },
+  "dependencies": {
+    "globby": "^6.0.0",
+    "lodash": "^4.13.1",
+    "meow": "^3.7.0"
+  },
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "del": "^2.2.2",
+    "tempfile": "^1.1.1"
+  },
+  "keywords": [
+    "cli-app",
+    "cli",
+    "rename",
+    "mv",
+    "copy",
+    "file",
+    "files",
+    "clone",
+    "pad",
+    "fs",
+    "glob",
+    "file-system"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webcaetano/pad-rename"
+  }
+}
