@@ -6,13 +6,16 @@ var self = require('./');
 
 var cli = meow([
 	'Usage',
-		'$ foo <input>',
+		'$ rpad <glob>',
 	'',
 	'Options',
-		'--rainbow, -r  Include a rainbow',
+		'--start inital pad start. Default: 1',
+		'--length the padding length. Default: 3',
+		'--val string used as padding. Default: "0"',
 	'',
 	'Examples',
-		'$ foo unicorns --rainbow'
+		'rpad "**/*.png"',
+		'rpad "**/*.png" --start 0 --length 5 --val "0"',
 ], {
 	string: ['_']
 });
@@ -22,12 +25,15 @@ var defaults = {
 }
 
 var options = _.extend({},defaults,{
-	rename: cli.flags.rename,
-	parents: cli.flags.parents,
+	start: cli.flags.start,
+	length: cli.flags.length,
+	val: cli.flags.val,
 })
 
+options = _.omitBy(options,_.isUndefined);
 
-var size = cli.input.pop();
-var dest = cli.input.pop();
 
-self(cli.input,dest,size,options);
+var glob = _.first(cli.input);
+
+// console.log(glob,options)
+self(glob,options);
