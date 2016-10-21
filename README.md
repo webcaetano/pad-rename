@@ -38,30 +38,26 @@ rpad(['**/*.png'],{start:0},function(){
 
 
 <table>
-	<thead>
-	<tr>
-		<td><strong>Option</strong></td>
-		<td width="300"><strong>Description</strong></td>
-		<td><strong>Default</strong></td>
-	</tr>
-	</thead>	
-	<tbody>
-	<tr>
-		<td><code>start</code></td>
-		<td>The inital pad start.</td>
-		<td><code>1</code></td>
-	</tr>
-	<tr>
-		<td><code>length</code></td>
-		<td>The padding length.</td>
-		<td><code>3</code></td>
-	</tr>
-	<tr>
-		<td><code>val</code></td>
-		<td>The string used as padding.</td>
-		<td><code>0</code></td>
-	</tr>
-	</tbody>
+<tr>
+<td><strong>Option</strong></td>
+<td width="300"><strong>Description</strong></td>
+<td><strong>Default</strong></td>
+</tr>
+<tr>
+<td><code>start</code></td>
+<td>The inital pad start.</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>length</code></td>
+<td>The padding length.</td>
+<td><code>3</code></td>
+</tr>
+<tr>
+<td><code>val</code></td>
+<td>The string used as padding.</td>
+<td><code>0</code></td>
+</tr>
 </table>
 
 
