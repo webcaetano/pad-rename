@@ -38,12 +38,14 @@ rpad(['**/*.png'],{start:0},function(){
 
 
 <table>
+	<thead>
 	<tr>
 		<td><strong>Option</strong></td>
 		<td width="300"><strong>Description</strong></td>
 		<td><strong>Default</strong></td>
-	</tr>	
-
+	</tr>
+	</thead>	
+	<tbody>
 	<tr>
 		<td><code>start</code></td>
 		<td>The inital pad start.</td>
@@ -59,6 +61,7 @@ rpad(['**/*.png'],{start:0},function(){
 		<td>The string used as padding.</td>
 		<td><code>0</code></td>
 	</tr>
+	</tbody>
 </table>
 
 
