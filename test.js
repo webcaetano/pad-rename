@@ -26,12 +26,7 @@ test('should output renamed pad files', async function(t){
 	self(path.join(tmpFolder,'/**'),function(err,data){
 		t.is(err,null);
 		t.pass();
-		// del.sync(tmpFolder,{
-		// 	force:true
-		// });
 	})
-	// await self(path.join(tmpFolder,'/src/*.png'),path.join(tmpFolder,'/output'),3);
-	// t.is(globby.sync(path.join(tmpFolder,'/src/*')).length,30);
 
 });
 
