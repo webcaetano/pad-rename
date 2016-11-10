@@ -8,13 +8,16 @@ var _ = require('lodash');
 var defaults = {
 	start:1,
 	length:3,
+	sufix:'',
+	prefix:'',
 	val:'0'
 }
 
 var self = function(src, options, done){
 	if(typeof options==='function') {
-		done = options;
-		options = {};
+		var tmpVar = options;
+		options = done ? done : {};
+		done = tmpVar;
 	}
 	options = _.extend({},defaults,options);
 
@@ -45,7 +48,7 @@ var self = function(src, options, done){
 					var data = path.parse(file);
 					var newName = path.format({
 						dir:data.dir,
-						name:_.padStart(options.start+k,options.length,options.val),
+						name:options.prefix+_.padStart(options.start+k,options.length,options.val)+options.sufix,
 						ext:data.ext,
 					});
 

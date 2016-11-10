@@ -1,6 +1,6 @@
 {
   "name": "pad-rename",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Rename files with pads splited on folders",
   "main": "index.js",
   "author": "Andre Caetano",

@@ -32,6 +32,22 @@ rpad('**/*.png',function(){
 rpad(['**/*.png'],{start:0},function(){
 
 });
+
+// or
+rpad(['**/*.png'],function(){
+
+},{start:0});
+
+// with all options
+rpad(['**/*.png'],function(err,data){
+
+},{
+	prefix:'lulu_',
+	sufix:'_purple',
+	start:0,
+	length:5,
+	val:'o',
+});
 ```
 
 ## Options
@@ -58,6 +74,16 @@ rpad(['**/*.png'],{start:0},function(){
 <td>The string used as padding.</td>
 <td><code>0</code></td>
 </tr>
+<tr>
+<td><code>sufix</code></td>
+<td>The string used as sufix.</td>
+<td><code>""</code></td>
+</tr>
+<tr>
+<td><code>prefix</code></td>
+<td>The string used as prefix.</td>
+<td><code>""</code></td>
+</tr>
 </table>
 
 
@@ -75,10 +101,12 @@ Options
 	--start inital pad start. Default: 1
 	--length the padding length. Default: 3
 	--val string used as padding. Default: "0"
+	--prefix string used as prefix. Default: ""
+	--sufix string used as sufix. Default: ""
 
 Examples
 	rpad "**/*.png"
-	rpad "**/*.png" --start 0 --length 5 --val "0"
+	rpad "**/*.png" --start 0 --length 5 --val "0" --prefix "img_" --sufix "_end"
 ```
 
 
