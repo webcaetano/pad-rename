@@ -3,6 +3,7 @@ var fs = require('fs');
 var glob = require('glob');
 var async = require('async');
 var _ = require('lodash');
+var naturalSort = require('node-natural-sort');
 
 // insert defaults here
 var defaults = {
@@ -44,7 +45,7 @@ var self = function(src, options, done){
 			var run = [];
 
 			_.each(folders,function(folder,i){
-				_.each(folder,function(file,k){
+				_.each(folder.sort(naturalSort()),function(file,k){
 					var data = path.parse(file);
 					var newName = path.format({
 						dir:data.dir,
